@@ -1,6 +1,21 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const app = express();
 
-app.listen(3001, () => {
-  console.log("running on port 3001");
+require("dotenv").config();
+const uri = process.env.DB_URI;
+
+async function connect() {
+  try {
+    await mongoose.connect(uri);
+    console.log("Connected to the MongoDB");
+  } catch {
+    console.error(error);
+  }
+}
+
+connect();
+
+app.listen(8000, () => {
+  console.log("Server started on port 8000");
 });
