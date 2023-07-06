@@ -5,8 +5,8 @@ function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Navbar
+          <a className="navbar-brand" href="/">
+            <img src="src/assets/images/logo.png" alt="Logo" />
           </a>
           <button
             className="navbar-toggler"
