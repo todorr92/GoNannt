@@ -11,13 +11,32 @@ function Footer() {
   return (
     <>
       <footer>
-        <FontAwesomeIcon icon={faFacebookSquare} style={{ color: "#ffffff" }} />
-        <FontAwesomeIcon icon={faTwitterSquare} style={{ color: "#ffffff" }} />
-        <FontAwesomeIcon
-          icon={faInstagramSquare}
-          style={{ color: "#ffffff" }}
-        />
-        <FontAwesomeIcon icon={faLinkedin} style={{ color: "#ffffff" }} />
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-12">
+              <FontAwesomeIcon
+                icon={faFacebookSquare}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faTwitterSquare}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faInstagramSquare}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                style={{ color: "#ffffff" }}
+                size="2xl"
+              />
+            </div>
+          </div>
+        </div>
       </footer>
     </>
   );
