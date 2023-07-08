@@ -33,18 +33,13 @@ function Navbar() {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" to="#">
-                      Action
+                    <Link className="dropdown-item" to="/parents/how-it-works">
+                      How it works
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="#">
-                      Another action
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Something else here
+                    <Link className="dropdown-item" to="/parents/FAQ's">
+                      FAQ's
                     </Link>
                   </li>
                 </ul>
@@ -61,24 +56,19 @@ function Navbar() {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" to="#">
-                      Action
+                    <Link className="dropdown-item" to="/sitters/how-it-works">
+                      How it works
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="#">
-                      Another action
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Something else here
+                    <Link className="dropdown-item" to="/sitters/FAQ's">
+                      FAQ's
                     </Link>
                   </li>
                 </ul>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">
+                <Link className="nav-link" to="/jobs-board">
                   Jobs Board
                 </Link>
               </li>
@@ -90,22 +80,17 @@ function Navbar() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown link
+                  Join us
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" to="#">
-                      Action
+                    <Link className="dropdown-item" to="/sign-up">
+                      Sign up
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="#">
-                      Another action
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Something else here
+                    <Link className="dropdown-item" to="/login">
+                      Login
                     </Link>
                   </li>
                 </ul>
