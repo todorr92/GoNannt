@@ -1,7 +1,12 @@
-footer {
-  background-color: aqua;
+/* COMMON STYLES */
+.header-color {
+  color: #264e86;
+}
+.text-color {
+  color: #4c79b9;
 }
 
+/* NAVBAR */
 .navbar {
   background-color: #eff0f4;
 }
@@ -12,4 +17,18 @@ footer {
 
 .nav-item a {
   color: #264e86;
+}
+/* HEADER */
+.landing-text-container {
+  margin-top: 200px !important;
+}
+.landing-header {
+  font-size: 3rem;
+}
+.landing-paragraph {
+  font-size: 20px;
+}
+/* FOOTER */
+footer {
+  background-color: aqua;
 }

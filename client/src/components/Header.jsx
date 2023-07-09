@@ -4,9 +4,11 @@ function Header() {
       <div className="container-fluid">
         <div className="container">
           <div className="row">
-            <div className="col-sm-12 col-md-6">
-              <h2>How GoNanny works for parents</h2>
-              <p>
+            <div className="col-sm-12 col-md-6 landing-text-container">
+              <h1 className="landing-header header-color">
+                How GoNanny <br /> works for parents
+              </h1>
+              <p className="landing-paragraph text-color">
                 We’re making it easy to find local, trusted and recommended
                 childcare professionals, for one-off events or long-term
                 support. It’s free to join and post jobs.
