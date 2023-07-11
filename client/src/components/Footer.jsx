@@ -11,9 +11,9 @@ function Footer() {
   return (
     <>
       <footer>
-        <div className="container-fluid">
+        <div className="container">
           <div className="row">
-            <div className="col-md-4 col-sm-12">
+            <div className="col-6 mt-5">
               <div className="card" style={{ width: "18rem" }}>
                 <h2>For Parents</h2>
                 <div className="card-body">
@@ -23,7 +23,7 @@ function Footer() {
                 </div>
               </div>
             </div>
-            <div className="col-md-4 col-sm-12">
+            <div className="col-6 mt-5">
               <div className="card" style={{ width: "18rem" }}>
                 <h2>For sitters</h2>
                 <div className="card-body">
@@ -35,7 +35,7 @@ function Footer() {
             </div>
           </div>
           <div className="row">
-            <div className="col-12">
+            <div className="col-12 text-center">
               <FontAwesomeIcon
                 icon={faFacebookSquare}
                 style={{ color: "#ffffff" }}
@@ -57,6 +57,9 @@ function Footer() {
                 size="2xl"
               />
             </div>
+          </div>
+          <div className="row">
+            <p className="text-center">Used for educational purposes only.</p>
           </div>
         </div>
       </footer>
