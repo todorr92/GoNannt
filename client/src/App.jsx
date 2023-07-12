@@ -1,6 +1,9 @@
+// COMPONENTS
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
+
+// PAGES
 import HowItWorksParents from "./pages/HowItWorksParents";
 import HowItWorksSitters from "./pages/HowItWorksSitters";
 import FAQParents from "./pages/FAQParents";
@@ -8,6 +11,8 @@ import FAQSitters from "./pages/FAQSitters";
 import JobsBoard from "./pages/JobsBoard";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
+
+// REACT IMPORTS
 import { Route, Routes } from "react-router-dom";
 
 function App() {
