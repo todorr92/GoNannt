@@ -1,0 +1,22 @@
+import React from "react";
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+// HIDING FOOTER WHEN PATH IS /login and /sign-up
+
+function HideFooter({ children }) {
+  const location = useLocation();
+
+  const [showFooter, setShowFooter] = useState(false);
+
+  useEffect(() => {
+    if (location.pathname === "/sign-up" || location.pathname === "/login") {
+      setShowFooter(false);
+    } else {
+      setShowFooter(true);
+    }
+  }, [location]);
+  return <div>{showFooter && children}</div>;
+}
+
+export default HideFooter;
