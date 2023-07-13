@@ -12,13 +12,19 @@ import JobsBoard from "./pages/JobsBoard";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 
+// COMPONENTS
+import HideNavbarAndFooter from "./components/HideNavbarAndFooter";
+
 // REACT IMPORTS
 import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <HideNavbarAndFooter>
+        <Navbar />
+        <Footer />
+      </HideNavbarAndFooter>
       <Routes>
         <Route path="/" element={<Header />}></Route>
         <Route path="/home" element={<Header />}></Route>
@@ -36,8 +42,6 @@ function App() {
         <Route path="/sign-up" element={<SignUp />}></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>
-
-      <Footer />
     </>
   );
 }
