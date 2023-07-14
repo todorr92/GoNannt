@@ -10,7 +10,7 @@ function HideFooter({ children }) {
   const [showFooter, setShowFooter] = useState(false);
 
   useEffect(() => {
-    if (location.pathname === "/sign-up" || location.pathname === "/login") {
+    if (location.pathname === "/join-us") {
       setShowFooter(false);
     } else {
       setShowFooter(true);
