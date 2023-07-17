@@ -9,7 +9,7 @@ const HideNavbar = ({ children }) => {
   const [showNavbar, setShowNavbar] = useState(false);
 
   useEffect(() => {
-    if (location.pathname === "/join-us") {
+    if (location.pathname === "/login" || location.pathname === "/register") {
       setShowNavbar(false);
     } else {
       setShowNavbar(true);

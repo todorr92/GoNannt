@@ -73,10 +73,28 @@ function Navbar() {
                   Jobs Board
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/join-us">
+              <li className="nav-item dropdown">
+                <Link
+                  className="nav-link dropdown-toggle"
+                  to="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   Join us
                 </Link>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link className="dropdown-item" to="/login">
+                      Login
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/register">
+                      Register
+                    </Link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>

@@ -11,7 +11,8 @@ import HowItWorksSitters from "./pages/HowItWorksSitters";
 import FAQParents from "./pages/FAQParents";
 import FAQSitters from "./pages/FAQSitters";
 import JobsBoard from "./pages/JobsBoard";
-import JoinUs from "./pages/JoinUs";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 // REACT IMPORTS
 import { Route, Routes } from "react-router-dom";
@@ -36,7 +37,8 @@ function App() {
         ></Route>
         <Route path="/sitters/FAQ's" element={<FAQSitters />}></Route>
         <Route path="/jobs-board" element={<JobsBoard />}></Route>
-        <Route path="/join-us" element={<JoinUs />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
       </Routes>
       <HideFooter>
         <Footer />

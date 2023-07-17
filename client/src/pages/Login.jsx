@@ -1,50 +1,8 @@
-function JoinUs() {
-  let loginForm = document.getElementById("login");
-  let registerForm = document.getElementById("register");
-  let loginToggle = document.getElementById("login-toggle");
-  let registerToggle = document.getElementById("register-toggle");
-
-  const showRegister = () => {
-    loginToggle.classList.remove("active");
-    loginForm.classList.add("d-none");
-    registerForm.classList.remove("d-none");
-    registerToggle.classList.add("active");
-  };
-
-  const showLogin = () => {
-    registerToggle.classList.remove("active");
-    registerForm.classList.add("d-none");
-    loginForm.classList.remove("d-none");
-    loginToggle.classList.add("active");
-  };
-
+function Login() {
   return (
     <>
       <div className="container-fluid" id="join-us">
         <div className="container" id="join-us-container">
-          <div className="row">
-            <ul className="d-flex justify-content-center join-us-btns">
-              <li>
-                <button
-                  className="active"
-                  type="submit"
-                  id="login-toggle"
-                  onClick={showLogin}
-                >
-                  Login
-                </button>
-              </li>
-              <li>
-                <button
-                  type="submit"
-                  id="register-toggle"
-                  onClick={showRegister}
-                >
-                  Register
-                </button>
-              </li>
-            </ul>
-          </div>
           <form id="login">
             <h1 className="h3 mb-3">Please login</h1>
 
@@ -88,4 +46,4 @@ function JoinUs() {
   );
 }
 
-export default JoinUs;
+export default Login;

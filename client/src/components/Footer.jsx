@@ -19,7 +19,7 @@ function Footer() {
                 <h2>For Parents</h2>
                 <div className="card-body">
                   <Link to="/parents/FAQ's">FAQ's for Parents</Link> <br />
-                  <Link to="/sign-up">Signup as a Parent</Link> <br />
+                  <Link to="/register">Signup as a Parent</Link> <br />
                   <Link to="">Trust on GoNanny</Link>
                 </div>
               </div>
@@ -30,7 +30,7 @@ function Footer() {
                 <div className="card-body">
                   <Link to="/sitters/FAQ's">FAQ's for Sitters</Link> <br />
                   <Link to="/jobs-board">Jobs Board</Link> <br />
-                  <Link to="/sign-up">Signup as a Sitter</Link>
+                  <Link to="/register">Signup as a Sitter</Link>
                 </div>
               </div>
             </div>
