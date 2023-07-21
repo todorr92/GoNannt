@@ -9,19 +9,19 @@ const {
 
 const router = express.Router();
 
-// GET all workouts
-router.get("/", getJobs);
+// GET all job
+router.get("/jobs-board", getJobs);
 
-// GET a single workout
-router.get("/:id", getJob);
+// GET a single job
+router.get("/jobs-board/:id", getJob);
 
-// POST a new workout
-router.post("/", createJob);
+// POST a new job
+router.post("/jobs-board/post-job", createJob);
 
-// DELETE a workout
-router.delete("/:id", deleteJob);
+// DELETE a job
+router.delete("/jobs-board/:id", deleteJob);
 
-// UPDATE a workout
-router.patch("/:id", updateJob);
+// UPDATE a job
+router.patch("/jobs-board/:id", updateJob);
 
 module.exports = router;
