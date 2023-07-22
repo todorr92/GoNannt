@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 });
 
 // routes
-app.use("/jobs", jobRoutes);
+app.use("/api/jobs-board", jobRoutes);
 
 //CONNECT TO DB
 async function connect() {

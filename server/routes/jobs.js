@@ -10,18 +10,18 @@ const {
 const router = express.Router();
 
 // GET all job
-router.get("/jobs-board", getJobs);
+router.get("/", getJobs);
 
 // GET a single job
-router.get("/jobs-board/:id", getJob);
+router.get("/:id", getJob);
 
 // POST a new job
-router.post("/jobs-board/post-job", createJob);
+router.post("/post-job", createJob);
 
 // DELETE a job
-router.delete("/jobs-board/:id", deleteJob);
+router.delete("/:id", deleteJob);
 
 // UPDATE a job
-router.patch("/jobs-board/:id", updateJob);
+router.patch("/:id", updateJob);
 
 module.exports = router;
