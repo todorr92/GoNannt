@@ -7,7 +7,7 @@ const JobForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [address, setAddress] = useState("");
-  const [postedBy, setPostedBy] = useState("");
+  // const [postedBy, setPostedBy] = useState("");
   const [error, setError] = useState(null);
   const [emptyFields, setEmptyFields] = useState([]);
 
@@ -35,7 +35,7 @@ const JobForm = () => {
       setTitle("");
       setDescription("");
       setAddress("");
-      setPostedBy("");
+      // setPostedBy("");
       dispatch({ type: "CREATE_JOB", payload: json });
     }
   };
