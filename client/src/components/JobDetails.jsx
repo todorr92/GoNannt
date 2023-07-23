@@ -25,8 +25,12 @@ const JobDetails = ({ job }) => {
         {job.description}
       </p>
       <p>
-        <strong>Address</strong>
+        <strong>Address:</strong>
         {job.address}
+      </p>
+      <p>
+        <strong>Posted by:</strong>
+        {job.postedBy}
       </p>
       <p>{formatDistanceToNow(new Date(job.createdAt), { addSuffix: true })}</p>
       <span className="material-symbols-outlined" onClick={handleClick}>

@@ -14,9 +14,9 @@ const JobForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const job = { title, description, address, postedBy };
+    const job = { title, description, address };
 
-    const response = await fetch("/api/jobs-board/post-job", {
+    const response = await fetch("/api/jobs-board", {
       method: "POST",
       body: JSON.stringify(job),
       headers: {

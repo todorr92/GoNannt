@@ -16,6 +16,7 @@ import Login from "./pages/Login";
 
 // REACT IMPORTS
 import { Route, Routes } from "react-router-dom";
+import PostJob from "./pages/PostJob";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         ></Route>
         <Route path="/sitters/FAQ's" element={<FAQSitters />}></Route>
         <Route path="/jobs-board" element={<JobsBoard />}></Route>
+        <Route path="/jobs-board/post-job" element={<PostJob />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
       </Routes>
