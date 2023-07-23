@@ -6,7 +6,7 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 const JobDetails = ({ job }) => {
   const { dispatch } = useJobsContext();
 
-  const handleClick = async () => {
+  const handleDeleteClick = async () => {
     const response = await fetch("/api/jobs-board/" + job._id, {
       method: "DELETE",
     });
@@ -33,9 +33,7 @@ const JobDetails = ({ job }) => {
         {job.postedBy}
       </p>
       <p>{formatDistanceToNow(new Date(job.createdAt), { addSuffix: true })}</p>
-      <span className="material-symbols-outlined" onClick={handleClick}>
-        delete
-      </span>
+      <span onClick={handleDeleteClick}>delete</span>
     </div>
   );
 };
