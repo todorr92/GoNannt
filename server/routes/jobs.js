@@ -16,7 +16,7 @@ router.get("/", getJobs);
 router.get("/:id", getJob);
 
 // POST a new job
-router.post("/post-job", createJob);
+router.post("/", createJob);
 
 // DELETE a job
 router.delete("/:id", deleteJob);

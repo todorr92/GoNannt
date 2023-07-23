@@ -13,7 +13,6 @@ const jobSchema = new Schema(
     },
     postedBy: {
       type: String,
-      required: true,
     },
     address: {
       type: String,
