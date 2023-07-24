@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-//IMPORTING JOBS ROUTES
+//IMPORTING ROUTES
 const jobRoutes = require("./routes/jobs");
+const userRoutes = require("./routes/users");
 // EXPRESS APP
 const app = express();
-const Parent = require("./models/parent");
 
 require("dotenv").config();
 const uri = process.env.DB_URI;
@@ -19,6 +19,7 @@ app.use((req, res, next) => {
 
 // routes
 app.use("/api/jobs-board", jobRoutes);
+app.use("/api/user", userRoutes);
 
 //CONNECT TO DB
 async function connect() {
