@@ -20,7 +20,6 @@ const parentSchema = new Schema(
     },
     description: {
       type: String,
-      required: true,
     },
     numOfKids: {
       type: Number,
