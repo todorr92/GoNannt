@@ -1,7 +1,14 @@
 // REACT IMPORTS
 import { Link } from "react-router-dom";
 
+import { useLogout } from "../hooks/useLogout";
+
 function Navbar() {
+  const { logout } = useLogout();
+
+  const handleClick = () => {
+    logout();
+  };
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -97,6 +104,9 @@ function Navbar() {
                 </ul>
               </li>
             </ul>
+            <div>
+              <button onClick={handleClick}>Log out</button>
+            </div>
           </div>
         </div>
       </nav>
