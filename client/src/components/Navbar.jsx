@@ -2,9 +2,11 @@
 import { Link } from "react-router-dom";
 
 import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 function Navbar() {
   const { logout } = useLogout();
+  const { user } = useAuthContext();
 
   const handleClick = () => {
     logout();
@@ -80,33 +82,38 @@ function Navbar() {
                   Jobs Board
                 </Link>
               </li>
-              <li className="nav-item dropdown">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Join us
-                </Link>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link className="dropdown-item" to="/login">
-                      Login
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/signup">
-                      Signup
-                    </Link>
-                  </li>
-                </ul>
-              </li>
+              {!user && (
+                <li className="nav-item dropdown">
+                  <Link
+                    className="nav-link dropdown-toggle"
+                    to="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Join us
+                  </Link>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link className="dropdown-item" to="/login">
+                        Login
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/signup">
+                        Signup
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+              )}
             </ul>
-            <div>
-              <button onClick={handleClick}>Log out</button>
-            </div>
+            {user && (
+              <div>
+                <span>{user.email}</span>
+                <button onClick={handleClick}>Log out</button>
+              </div>
+            )}
           </div>
         </div>
       </nav>
