@@ -8,13 +8,13 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(email, password);
+    console.log(name, email, password);
   };
   return (
     <>
       <div className="container-fluid" id="join-us">
         <div className="container" id="join-us-container">
-          <form id="register">
+          <form id="register" onSubmit={handleSubmit}>
             <h1 className="h3 mb-3">Please register</h1>
             <div className="form-floating">
               <input
