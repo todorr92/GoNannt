@@ -1,21 +1,23 @@
 import React, { useState } from "react";
+import { useSignup } from "../hooks/useSignup";
 
 function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { signup, error, isLoading } = useSignup();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(name, email, password);
+    await signup(name, email, password);
   };
   return (
     <>
       <div className="container-fluid" id="join-us">
         <div className="container" id="join-us-container">
           <form id="register" onSubmit={handleSubmit}>
-            <h1 className="h3 mb-3">Please register</h1>
+            <h1 className="h3 mb-3">Please signup</h1>
             <div className="form-floating">
               <input
                 type="text"
@@ -46,9 +48,10 @@ function Signup() {
               />
               <label htmlFor="password">Password</label>
             </div>
-            <button className="btn btn-primary" type="submit">
+            <button className="btn btn-primary" disabled={isLoading}>
               Register
             </button>
+            {error && <div className="error">{error}</div>}
           </form>
         </div>
       </div>
