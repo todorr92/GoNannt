@@ -1,6 +1,6 @@
 import React from "react";
 
-function Register() {
+function Signup() {
   return (
     <>
       <div className="container-fluid" id="join-us">
@@ -33,4 +33,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Signup;
