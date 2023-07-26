@@ -1,14 +1,22 @@
 import { useJobsContext } from "../hooks/useJobsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 // date fns
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 const JobDetails = ({ job }) => {
   const { dispatch } = useJobsContext();
+  const { user } = useAuthContext();
+  if (!user) {
+    return;
+  }
 
   const handleDeleteClick = async () => {
     const response = await fetch("/api/jobs-board/" + job._id, {
       method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
     });
     const json = await response.json();
 
