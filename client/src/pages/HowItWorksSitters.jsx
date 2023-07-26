@@ -1,5 +1,7 @@
-function HowItWorksSitters() {
-  return <h1>How it works sitters</h1>;
-}
+import React from "react";
+
+const HowItWorksSitters = () => {
+  return <div>HowItWorksSitters</div>;
+};
 
 export default HowItWorksSitters;

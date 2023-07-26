@@ -8,7 +8,7 @@ import {
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 
-function Footer() {
+const Footer = () => {
   return (
     <>
       <footer>
@@ -66,6 +66,6 @@ function Footer() {
       </footer>
     </>
   );
-}
+};
 
 export default Footer;

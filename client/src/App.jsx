@@ -1,6 +1,6 @@
 // COMPONENTS
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import HideNavbar from "./components/HideNavbar";
 import HideFooter from "./components/HideFooter";
@@ -28,8 +28,8 @@ function App() {
         <Navbar />
       </HideNavbar>
       <Routes>
-        <Route path="/" element={<Header />}></Route>
-        <Route path="/home" element={<Header />}></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
         <Route
           path="/parents/how-it-works"
           element={<HowItWorksParents />}

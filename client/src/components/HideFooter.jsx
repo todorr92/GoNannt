@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 // HIDING FOOTER WHEN PATH IS /login and /sign-up
 
-function HideFooter({ children }) {
+const HideFooter = ({ children }) => {
   const location = useLocation();
 
   const [showFooter, setShowFooter] = useState(false);
@@ -17,6 +17,6 @@ function HideFooter({ children }) {
     }
   }, [location]);
   return <div>{showFooter && children}</div>;
-}
+};
 
 export default HideFooter;
