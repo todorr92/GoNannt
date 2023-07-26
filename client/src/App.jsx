@@ -5,6 +5,9 @@ import Navbar from "./components/Navbar";
 import HideNavbar from "./components/HideNavbar";
 import HideFooter from "./components/HideFooter";
 
+// HOOOKS
+import { useAuthContext } from "./hooks/useAuthContext";
+
 // PAGES
 import HowItWorksParents from "./pages/HowItWorksParents";
 import HowItWorksSitters from "./pages/HowItWorksSitters";
@@ -15,9 +18,10 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
 // REACT IMPORTS
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 
 function App() {
+  const { user } = useAuthContext();
   return (
     <>
       <HideNavbar>
@@ -36,9 +40,18 @@ function App() {
           element={<HowItWorksSitters />}
         ></Route>
         <Route path="/sitters/FAQ's" element={<FAQSitters />}></Route>
-        <Route path="/jobs-board" element={<JobsBoard />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/signup" element={<Signup />}></Route>
+        <Route
+          path="/jobs-board"
+          element={user ? <JobsBoard /> : <Navigate to="/login" />}
+        ></Route>
+        <Route
+          path="/login"
+          element={!user ? <Login /> : <Navigate to="/" />}
+        ></Route>
+        <Route
+          path="/signup"
+          element={!user ? <Signup /> : <Navigate to="/" />}
+        ></Route>
       </Routes>
       <HideFooter>
         <Footer />
