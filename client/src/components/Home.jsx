@@ -1,18 +1,11 @@
-import React from "react";
-// FONTAWESOME ICONS
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFileLines,
-  faUsers,
-  faPeopleRoof,
-} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <>
-      <div className="container-fluid">
-        <div className="container">
-          <div className="row">
+      <div className="container-fluid home-container">
+        <div className="container-fluid home">
+          <div className="row justify-content-center">
             <div className="col-sm-12 col-md-6 landing-text-container">
               <h1 className="landing-header header-color">
                 Find Trusted Childcare in Ireland
@@ -20,77 +13,91 @@ const Home = () => {
               <h3>Founded by Irish parents, for parents.</h3>
               <p className="landing-paragraph text-color">
                 If you need a nanny, childminder, au pair or babysitter we
-                provide you with the tools to empower you to find the care you
-                need.
+                provide you with the tools to empower <br /> you to find the
+                care you need.
               </p>
-              <button>Learn More</button>
-            </div>
-            <div className="col-sm-12 col-md-6">
-              <img src="src/assets/images/nanny-kids.png" alt="Nanny" />
+              <Link className="button" to="/parents/how-it-works">
+                Learn More
+              </Link>
             </div>
           </div>
         </div>
-        <div className="container">
-          <div className="row text-center d-flex">
-            <h2>How GoNanny works</h2>
-            <p>
-              Whether you’re a parent or a childcare professional, we’ve made
-              childcare as easy as 1, 2, 3
-            </p>
-            <button>For Parents</button>
-            <button>For Sitters</button>
-          </div>
-          <div className="row text-center">
-            <div className="col-6">
-              <img src="src/assets/images/parent.png" alt="Parent" />
+        <div className="container-fluid home-works">
+          <div className="container pt-5">
+            <div className="row text-center">
+              <h2 className="header-color">How GoNanny works</h2>
+              <p className="text-color">
+                Whether you’re a parent or a childcare professional, we’ve made
+                childcare as easy as 1, 2, 3
+              </p>
+              <div className="col-sm-12">
+                <button className="button d-inline-block" id="round-parents">
+                  For Parents
+                </button>
+
+                <button
+                  className="button d-inline-block active"
+                  id="round-sitters"
+                >
+                  For Sitters
+                </button>
+              </div>
             </div>
-            <div className="col-6">
-              <ul className="parent">
-                <li>
-                  <div>1</div>
-                  <h5>Post a job</h5>
-                  <p>Tell us what you need</p>
-                </li>
-                <li>
-                  <div>2</div>
-                  <h5>Connect with carers</h5>
-                  <p>View smart-matched profiles and invite carers to apply</p>
-                </li>
-                <li>
-                  <div>3</div>
-                  <h5>Interview and select</h5>
-                  <p>Choose a carer, agree terms, enjoy the support</p>
-                </li>
-                <button>Learn More</button>
-                <button>Find Jobs</button>
-              </ul>
-              <ul className="sitter d-none">
-                <li>
-                  <div>1</div>
-                  <h5>Create your profile</h5>
-                  <p>
-                    Share your personality, your experience and your passion for
-                    childcare.
-                  </p>
-                </li>
-                <li>
-                  <div>2</div>
-                  <h5>Search and apply</h5>
-                  <p>
-                    Search and apply for jobs and respond to parent/carer
-                    invites.
-                  </p>
-                </li>
-                <li>
-                  <div>3</div>
-                  <h5>Do what you love</h5>
-                  <p>
-                    Interview, agree a rate and earn money doing what you love.
-                  </p>
-                </li>
-                <button>Learn More</button>
-                <button>Find Jobs</button>
-              </ul>
+            <div className="row text-center">
+              <div className="col-6">
+                <img src="src/assets/images/parent.png" alt="Parent" />
+              </div>
+              <div className="col-6">
+                <ul className="parent">
+                  <li>
+                    <div>1</div>
+                    <h5>Post a job</h5>
+                    <p>Tell us what you need</p>
+                  </li>
+                  <li>
+                    <div>2</div>
+                    <h5>Connect with carers</h5>
+                    <p>
+                      View smart-matched profiles and invite carers to apply
+                    </p>
+                  </li>
+                  <li>
+                    <div>3</div>
+                    <h5>Interview and select</h5>
+                    <p>Choose a carer, agree terms, enjoy the support</p>
+                  </li>
+                  <button>Learn More</button>
+                  <button>Find Jobs</button>
+                </ul>
+                <ul className="sitter d-none">
+                  <li>
+                    <div>1</div>
+                    <h5>Create your profile</h5>
+                    <p>
+                      Share your personality, your experience and your passion
+                      for childcare.
+                    </p>
+                  </li>
+                  <li>
+                    <div>2</div>
+                    <h5>Search and apply</h5>
+                    <p>
+                      Search and apply for jobs and respond to parent/carer
+                      invites.
+                    </p>
+                  </li>
+                  <li>
+                    <div>3</div>
+                    <h5>Do what you love</h5>
+                    <p>
+                      Interview, agree a rate and earn money doing what you
+                      love.
+                    </p>
+                  </li>
+                  <button>Learn More</button>
+                  <button>Find Jobs</button>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
