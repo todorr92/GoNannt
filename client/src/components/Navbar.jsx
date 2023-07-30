@@ -13,11 +13,8 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary ">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            <img src="src/assets/images/logo.png" alt="Logo" />
-          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -30,7 +27,7 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav ms-5">
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
@@ -115,6 +112,9 @@ const Navbar = () => {
               </div>
             )}
           </div>
+          <Link className="navbar-brand" to="/">
+            <img src="src/assets/images/logo.png" alt="Logo" />
+          </Link>
         </div>
       </nav>
     </>
