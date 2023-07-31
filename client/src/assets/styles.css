@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 /* COMMON STYLES */
-.header-color {
+h1,
+h2,
+h3,
+h4 {
   color: #264e86;
 }
 .text-color {
@@ -10,11 +13,15 @@
 body {
   font-family: "Montserrat", sans-serif !important;
 }
+.purple {
+  color: #aea0ff;
+}
+.light-blue {
+  color: #eefdff;
+}
 
 /* NAVBAR */
 .navbar {
-  /* background-color: #eff0f4; */
-  /* background-color: #ffdfcb; */
   background-color: white;
 }
 .navbar-brand img {
@@ -81,6 +88,50 @@ body {
 .home-works {
   background-color: #eefdff;
 }
+.parent li,
+.sitter li {
+  list-style: none;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.number {
+  width: 30px;
+  line-height: 30px;
+  height: 30px;
+  border-radius: 100%;
+  color: #fff;
+  --tw-bg-opacity: 1;
+  background-color: #aea0ff;
+  text-align: center;
+  font-size: 15px;
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.checkbox-list,
+.col-4 article {
+  box-shadow: 10px 10px 12px 4px rgba(220, 216, 245, 0.67);
+  -webkit-box-shadow: 10px 10px 12px 4px rgba(220, 216, 245, 0.67);
+  -moz-box-shadow: 10px 10px 12px 4px rgba(220, 216, 245, 0.67);
+  border-radius: 0.25rem;
+  padding: 10px;
+}
+.checkbox-list li {
+  list-style: none;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.col-4 article {
+  margin-right: 10px;
+}
+
+.people-image {
+  border-radius: 2%;
+}
+
 /* FOOTER */
 footer {
   background-color: #516f90;
