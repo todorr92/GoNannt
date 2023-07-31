@@ -16,6 +16,7 @@ import FAQSitters from "./pages/FAQSitters";
 import JobsBoard from "./pages/JobsBoard";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import About from "./pages/About";
 
 // REACT IMPORTS
 import { Route, Routes, Navigate } from "react-router-dom";
@@ -52,6 +53,7 @@ function App() {
           path="/signup"
           element={!user ? <Signup /> : <Navigate to="/" />}
         ></Route>
+        <Route path="/about" element={<About />}></Route>
       </Routes>
       <HideFooter>
         <Footer />
