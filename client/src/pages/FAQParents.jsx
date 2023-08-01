@@ -3,24 +3,31 @@ import React from "react";
 const FAQParents = () => {
   return (
     <>
-      FAQParents
       <div className="container-fluid">
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12 col-md-6 landing-text-container">
-              <h1 className="landing-header header-color">FAQ's for Parents</h1>
-              <p className="landing-paragraph text-color">
-                Everything you need to know as a parent on SureSitter.
-              </p>
-            </div>
-            <div className="col-sm-12 col-md-6">
-              <img src="src/assets/images/bottle.png" alt="Bottle" />
+        <div className="container-fluid light-blue-background mb-5">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-12 col-md-6 landing-text-container">
+                <h1 className="landing-header header-color fw-bold">
+                  FAQ's for Parents
+                </h1>
+                <p className="landing-paragraph text-color">
+                  Everything you need to know as a parent on SureSitter.
+                </p>
+              </div>
+              <div className="col-sm-12 col-md-6">
+                <img
+                  src="src/assets/images/bottle.png"
+                  className="img-fluid"
+                  alt="Bottle"
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div className="container">
-          <h3>What do we do?</h3>
-          <p>
+        <div className="container w-50 mb-5">
+          <h3 className="fw-bold">What do we do?</h3>
+          <p className="mb-5">
             SureSitter was founded by parents, for parents, to help make it easy
             for you to find childcare that others in your community know, trust
             and use. The first thing to say is that we’re not a babysitting or
@@ -31,14 +38,16 @@ const FAQParents = () => {
             Instead we provide parents with the tools and connections to help
             find the best caregivers that will work for you and your family.
           </p>
-          <h3>How do I sign-up to SureSitter as a parent?</h3>
-          <p>
+          <h3 className="fw-bold">
+            How do I sign-up to SureSitter as a parent?
+          </h3>
+          <p className="mb-5">
             Signing up is really simple.  Click on this link. You will then
             receive an email asking you to confirm your account. You must
             confirm your account before your profile will be live onSureSitter.
           </p>
-          <h3>How much does it cost?</h3>
-          <p>
+          <h3 className="fw-bold">How much does it cost?</h3>
+          <p className="mb-5">
             It’s FREE to post a job and review childminder profiles. You only
             pay when you find suitable carers that you want to connect with. We
             offer a number of options to suit all families. This includes a
@@ -50,8 +59,8 @@ const FAQParents = () => {
             childminders and babysitters. Parents and childminders agree on this
             together once we have made the introductions.
           </p>
-          <h3>Are the carers background checked?</h3>
-          <p>
+          <h3 className="fw-bold">Are the carers background checked?</h3>
+          <p className="mb-5">
             Trust is at the heart of our platform. As parents ourselves of small
             children we understand how important it is to find a trusted
             childminder or nanny. We do not carry out background checks. We
@@ -65,16 +74,16 @@ const FAQParents = () => {
             this by working with the 3rd party providers used by some of the
             world’s biggest financial institutions and marketplaces like us.
           </p>
-          <h3>Who is behind GoNanny?</h3>
-          <p>
+          <h3 className="fw-bold">Who is behind GoNanny?</h3>
+          <p className="mb-5">
             GoNanny was founded by number of workings parents who struggled to
             find suitable childcare. The business is backed by a great team of
             advisors, parents, and childminders whose ultimate goal is to create
             the best experience possible for parents and carers. Here is some
             information About Us.
           </p>
-          <h3>Where does SureSitter operate?</h3>
-          <p>We operate nationwide throughout Ireland.</p>
+          <h3 className="fw-bold">Where does SureSitter operate?</h3>
+          <p className="mb-5">We operate nationwide throughout Ireland.</p>
         </div>
       </div>
     </>

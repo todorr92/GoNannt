@@ -28,7 +28,11 @@ const HowItWorksParents = () => {
                 </p>
               </div>
               <div className="col-sm-12 col-md-6">
-                <img src="src/assets/images/nanny-kids.png" alt="" />
+                <img
+                  src="src/assets/images/nanny-kids.png"
+                  className="img-fluid"
+                  alt=""
+                />
               </div>
             </div>
           </div>
