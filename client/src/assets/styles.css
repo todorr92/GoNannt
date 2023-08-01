@@ -134,7 +134,31 @@ body {
 
 /* FOOTER */
 footer {
-  background-color: #516f90;
+  background-color: #eefdff;
+}
+.parents {
+  background-color: #aea0ff !important;
+}
+.parents ul li,
+.sitters ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.parents ul li a,
+.sitters ul li a {
+  text-decoration: none;
+  color: #264e86;
+}
+.sitters {
+  background-color: #7fd1de !important;
+}
+.parents,
+.sitters {
+  box-shadow: 10px 10px 12px 4px rgba(220, 216, 245, 0.67);
+  -webkit-box-shadow: 10px 10px 12px 4px rgba(220, 216, 245, 0.67);
+  -moz-box-shadow: 10px 10px 12px 4px rgba(220, 216, 245, 0.67);
+  border-radius: 0.25rem;
+  padding: 10px;
 }
 
 /* JOIN US */

@@ -13,49 +13,62 @@ const Footer = () => {
     <>
       <footer>
         <div className="container">
-          <div className="row">
-            <div className="col-6 mt-5">
-              <div className="card" style={{ width: "18rem" }}>
-                <h2>For Parents</h2>
-                <div className="card-body">
+          <div className="row mb-5 justify-content-around">
+            <div className="col-4 mt-5 parents">
+              <h4 className="text-light fw-bold mb-3">For Parents</h4>
+              <ul>
+                <li>
                   <Link to="/parents/FAQ's">FAQ's for Parents</Link> <br />
+                </li>
+                <li>
                   <Link to="/signup">Signup as a Parent</Link> <br />
+                </li>
+                <li>
                   <Link to="">Trust on GoNanny</Link>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
-            <div className="col-6 mt-5">
-              <div className="card" style={{ width: "18rem" }}>
-                <h2>For sitters</h2>
-                <div className="card-body">
+            <div className="col-4 mt-5 sitters">
+              <h4 className="text-light fw-bold mb-3">For sitters</h4>
+              <ul>
+                <li>
                   <Link to="/sitters/FAQ's">FAQ's for Sitters</Link> <br />
+                </li>
+                <li>
                   <Link to="/jobs-board">Jobs Board</Link> <br />
+                </li>
+                <li>
                   <Link to="/signup">Signup as a Sitter</Link>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
           </div>
+
           <div className="row">
             <div className="col-12 text-center">
               <FontAwesomeIcon
                 icon={faFacebookSquare}
-                style={{ color: "#ffffff" }}
+                style={{ color: "#4c79b9" }}
                 size="2xl"
+                className="me-1"
               />
               <FontAwesomeIcon
                 icon={faTwitterSquare}
-                style={{ color: "#ffffff" }}
+                style={{ color: "#4c79b9" }}
                 size="2xl"
+                className="me-1"
               />
               <FontAwesomeIcon
                 icon={faInstagramSquare}
-                style={{ color: "#ffffff" }}
+                style={{ color: "#4c79b9" }}
                 size="2xl"
+                className="me-1"
               />
               <FontAwesomeIcon
                 icon={faLinkedin}
-                style={{ color: "#ffffff" }}
+                style={{ color: "#4c79b9" }}
                 size="2xl"
+                className="me-1"
               />
             </div>
           </div>
