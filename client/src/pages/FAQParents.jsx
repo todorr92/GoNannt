@@ -26,7 +26,7 @@ const FAQParents = () => {
           </div>
         </div>
         <div className="container w-50 mb-5">
-          <h3 className="fw-bold">What do we do?</h3>
+          <h3 className="fw-bold mb-3">What do we do?</h3>
           <p className="mb-5">
             SureSitter was founded by parents, for parents, to help make it easy
             for you to find childcare that others in your community know, trust
@@ -38,7 +38,7 @@ const FAQParents = () => {
             Instead we provide parents with the tools and connections to help
             find the best caregivers that will work for you and your family.
           </p>
-          <h3 className="fw-bold">
+          <h3 className="fw-bold mb-3">
             How do I sign-up to SureSitter as a parent?
           </h3>
           <p className="mb-5">
@@ -46,7 +46,7 @@ const FAQParents = () => {
             receive an email asking you to confirm your account. You must
             confirm your account before your profile will be live onSureSitter.
           </p>
-          <h3 className="fw-bold">How much does it cost?</h3>
+          <h3 className="fw-bold mb-3">How much does it cost?</h3>
           <p className="mb-5">
             It’s FREE to post a job and review childminder profiles. You only
             pay when you find suitable carers that you want to connect with. We
@@ -59,7 +59,7 @@ const FAQParents = () => {
             childminders and babysitters. Parents and childminders agree on this
             together once we have made the introductions.
           </p>
-          <h3 className="fw-bold">Are the carers background checked?</h3>
+          <h3 className="fw-bold mb-3">Are the carers background checked?</h3>
           <p className="mb-5">
             Trust is at the heart of our platform. As parents ourselves of small
             children we understand how important it is to find a trusted
@@ -74,7 +74,7 @@ const FAQParents = () => {
             this by working with the 3rd party providers used by some of the
             world’s biggest financial institutions and marketplaces like us.
           </p>
-          <h3 className="fw-bold">Who is behind GoNanny?</h3>
+          <h3 className="fw-bold mb-3">Who is behind GoNanny?</h3>
           <p className="mb-5">
             GoNanny was founded by number of workings parents who struggled to
             find suitable childcare. The business is backed by a great team of
@@ -82,7 +82,7 @@ const FAQParents = () => {
             the best experience possible for parents and carers. Here is some
             information About Us.
           </p>
-          <h3 className="fw-bold">Where does SureSitter operate?</h3>
+          <h3 className="fw-bold mb-3">Where does SureSitter operate?</h3>
           <p className="mb-5">We operate nationwide throughout Ireland.</p>
         </div>
       </div>
