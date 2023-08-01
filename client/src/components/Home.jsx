@@ -19,7 +19,7 @@ const Home = () => {
         <div className="container-fluid home">
           <div className="row justify-content-center">
             <div className="col-sm-12 col-md-6 landing-text-container">
-              <h1 className="landing-header header-color fw-bold">
+              <h1 className="landing-header fw-bold">
                 Find Trusted Childcare in Ireland
               </h1>
               <h3>Founded by Irish parents, for parents.</h3>

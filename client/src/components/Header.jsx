@@ -12,7 +12,7 @@ function Header() {
         <div className="container">
           <div className="row">
             <div className="col-sm-12 col-md-6 landing-text-container">
-              <h1 className="landing-header header-color">
+              <h1 className="landing-header">
                 How GoNanny <br /> works for parents
               </h1>
               <p className="landing-paragraph text-color">

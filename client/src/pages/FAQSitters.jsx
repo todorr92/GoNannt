@@ -8,9 +8,7 @@ const FAQSitters = () => {
           <div className="container">
             <div className="row">
               <div className="col-sm-12 col-md-6 landing-text-container">
-                <h1 className="landing-header header-color fw-bold">
-                  FAQ's for Sitters
-                </h1>
+                <h1 className="landing-header fw-bold">FAQ's for Sitters</h1>
                 <p className="landing-paragraph text-color">
                   Everything you need to know as a Childminder, Nanny or
                   Babysitter on GoNanny
