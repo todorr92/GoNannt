@@ -19,6 +19,9 @@ body {
 .light-blue {
   color: #eefdff;
 }
+.light-blue-background {
+  background-color: #eefdff;
+}
 
 /* NAVBAR */
 .navbar {
@@ -160,7 +163,21 @@ footer {
   border-radius: 0.25rem;
   padding: 10px;
 }
+/* HOW IT WORKS PARENTS */
+.icons {
+  font-size: 50px;
+}
+.shadow {
+  box-shadow: 10px 10px 12px 4px rgba(220, 216, 245, 0.67);
+  -webkit-box-shadow: 10px 10px 12px 4px rgba(220, 216, 245, 0.67);
+  -moz-box-shadow: 10px 10px 12px 4px rgba(220, 216, 245, 0.67);
+  border-radius: 0.25rem;
+  padding: 10px;
+}
 
+.tips ul li {
+  list-style: none;
+}
 /* JOIN US */
 #join-us-container {
   max-width: 600px;
