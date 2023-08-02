@@ -179,17 +179,8 @@ footer {
   list-style: none;
 }
 /* JOIN US */
-#join-us-container {
-  max-width: 600px;
-}
 #join-us {
   height: 100vh;
-  background-color: #4c79b9;
-}
-.join-us-btns {
-  list-style: none;
-  padding: 20px;
-  margin-right: 30px;
 }
 
 #login-toggle,

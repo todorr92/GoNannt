@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,40 +14,59 @@ const Login = () => {
   };
   return (
     <>
-      <div className="container-fluid" id="join-us">
+      <div className="container-fluid light-blue-background" id="join-us">
         <div className="container" id="join-us-container">
-          <form id="login" onSubmit={handleSubmit}>
-            <h1 className="h3 mb-3">Please login</h1>
+          <div className="row justify-content-center">
+            <div className="col-6">
+              <Link to="/">
+                <img
+                  src="src/assets/images/cover.png"
+                  alt="logo"
+                  className="img-fluid"
+                />
+              </Link>
+            </div>
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-12 w-50 shadow">
+              <form
+                id="login"
+                onSubmit={handleSubmit}
+                className="bg-light text-center"
+              >
+                <h1 className="h3 mb-4 fw-bold pt-4">Log in to GoNanny</h1>
 
-            <div className="form-floating">
-              <input
-                type="email"
-                className="form-control"
-                id="email"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-              />
-              <label htmlFor="email">Email address</label>
+                <div className="form-floating w-75 m-auto">
+                  <input
+                    type="email"
+                    className="form-control mb-3"
+                    id="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                  />
+                  <label htmlFor="email">Email address</label>
+                </div>
+                <div className="form-floating w-75 m-auto">
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                  />
+                  <label htmlFor="password">Password</label>
+                </div>
+                <button
+                  className="button mt-5 mb-5"
+                  type="submit"
+                  disabled={isLoading}
+                >
+                  Login
+                </button>
+                {error && <div className="error">{error}</div>}
+              </form>
             </div>
-            <div className="form-floating">
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-              />
-              <label htmlFor="password">Password</label>
-            </div>
-            <button
-              className="btn btn-primary"
-              type="submit"
-              disabled={isLoading}
-            >
-              Login
-            </button>
-            {error && <div className="error">{error}</div>}
-          </form>
+          </div>
         </div>
       </div>
     </>
