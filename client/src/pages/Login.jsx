@@ -28,12 +28,8 @@ const Login = () => {
             </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-12 w-50 shadow">
-              <form
-                id="login"
-                onSubmit={handleSubmit}
-                className="bg-light text-center"
-              >
+            <div className="col-12 w-50 shadow bg-light">
+              <form id="login" onSubmit={handleSubmit} className="text-center">
                 <h1 className="h3 mb-4 fw-bold pt-4">Log in to GoNanny</h1>
 
                 <div className="form-floating w-75 m-auto">
@@ -64,6 +60,12 @@ const Login = () => {
                   Login
                 </button>
                 {error && <div className="error">{error}</div>}
+                <p>
+                  Don't have an account?{" "}
+                  <Link className="purple singup-link" to="/signup">
+                    Sign Up
+                  </Link>
+                </p>
               </form>
             </div>
           </div>

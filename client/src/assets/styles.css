@@ -178,6 +178,10 @@ footer {
 .tips ul li {
   list-style: none;
 }
+
+.singup-link:hover {
+  color: #264e86;
+}
 /* JOIN US */
 #join-us {
   height: 100vh;
