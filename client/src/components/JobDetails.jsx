@@ -26,23 +26,28 @@ const JobDetails = ({ job }) => {
   };
 
   return (
-    <div>
-      <h4>{job.title}</h4>
-      <p>
-        <strong>Description: </strong>
-        {job.description}
-      </p>
-      <p>
-        <strong>Address:</strong>
-        {job.address}
-      </p>
-      <p>
-        <strong>Posted by:</strong>
-        {job.postedBy}
-      </p>
-      <p>{formatDistanceToNow(new Date(job.createdAt), { addSuffix: true })}</p>
-      <span onClick={handleDeleteClick}>delete</span>
-    </div>
+    <>
+      <div className="container-fluid light-blue-background">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 text-center">
+              <h4>{job.title}</h4>
+              <p> {job.address}</p>
+              <span>
+                {formatDistanceToNow(new Date(job.createdAt), {
+                  addSuffix: true,
+                })}
+              </span>
+              <p>{job.description}</p>
+              <p>{job.postedBy}</p>
+              <button className="button" onClick={handleDeleteClick}>
+                delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

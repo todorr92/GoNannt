@@ -6,12 +6,23 @@ const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [parent, setParent] = useState(false);
   const { signup, error, isLoading } = useSignup();
+  const [isActiveParents, setActiveParents] = useState(false);
+  const [isActiveSitters, setActiveSitters] = useState(false);
+  const toggleClassParents = () => {
+    setActiveParents(!isActiveParents);
+    setActiveSitters(false);
+  };
+  const toggleClassSitters = () => {
+    setActiveSitters(!isActiveSitters);
+    setActiveParents(false);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await signup(name, email, password);
+    await signup(name, email, password, parent);
   };
   return (
     <>
@@ -32,6 +43,43 @@ const Signup = () => {
             <div className="col-12 w-50 shadow bg-light">
               <form id="login" onSubmit={handleSubmit} className="text-center">
                 <h1 className="h3 mb-4 fw-bold pt-4">Sign up to GoNanny</h1>
+                <div className="form-floating mt-5">
+                  <div className="col-sm-12 mb-5">
+                    <button
+                      className={
+                        isActiveParents
+                          ? "button d-inline-block active"
+                          : "button d-inline-block"
+                      }
+                      disabled={isActiveParents}
+                      id="round-parents"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setParent(true);
+                        toggleClassParents();
+                      }}
+                    >
+                      I am Parent
+                    </button>
+
+                    <button
+                      className={
+                        isActiveSitters
+                          ? "button d-inline-block active"
+                          : "button d-inline-block"
+                      }
+                      id="round-sitters"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setParent(false);
+                        toggleClassSitters();
+                      }}
+                      disabled={isActiveSitters}
+                    >
+                      I am Sitter
+                    </button>
+                  </div>
+                </div>
 
                 <div className="form-floating w-75 m-auto">
                   <input
