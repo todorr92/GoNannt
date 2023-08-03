@@ -104,13 +104,28 @@ const Navbar = () => {
                   </ul>
                 </li>
               )}
+
+              {user && (
+                <li className="nav-item dropdown">
+                  <Link
+                    className="nav-link dropdown-toggle"
+                    to="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    {user.email}
+                  </Link>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link className="dropdown-item" onClick={handleClick}>
+                        Log out
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+              )}
             </ul>
-            {user && (
-              <div>
-                <span>{user.email}</span>
-                <button onClick={handleClick}>Log out</button>
-              </div>
-            )}
           </div>
           <Link className="navbar-brand" to="/">
             <img src="src/assets/images/logo.png" alt="Logo" />
