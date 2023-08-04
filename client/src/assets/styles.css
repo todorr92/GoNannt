@@ -198,6 +198,26 @@ input.error {
   border: 1px solid var(--error);
 }
 
+/* JOBS-BOARD */
+.placeholder-img {
+}
+.placeholder-img img {
+  border-radius: 50%;
+  border: 3px solid #aea0ff;
+}
+.action-button {
+  background-color: #7fd1de;
+  color: #fff;
+  border-radius: 9999px;
+  border: none;
+  padding: 12px 20px 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.action-button:hover {
+  color: #fff;
+}
+
 /* MEDIA QUERIES */
 @media screen and (min-width: 768px) {
   .landing-text-container {

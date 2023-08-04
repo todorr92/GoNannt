@@ -8,20 +8,20 @@ const JobForm = () => {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [address, setAddress] = useState("");
-  // const [postedBy, setPostedBy] = useState("");
+  const [location, setLocation] = useState("");
+  const [postedBy, setPostedBy] = useState("");
+  const [payRate, setPayRate] = useState("");
   const [error, setError] = useState(null);
   const [emptyFields, setEmptyFields] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (!user) {
       setError("You must be logged in");
       return;
     }
 
-    const job = { title, description, address };
+    const job = { title, description, location, payRate, postedBy };
 
     const response = await fetch("/api/jobs-board", {
       method: "POST",
@@ -42,8 +42,9 @@ const JobForm = () => {
       setError(null);
       setTitle("");
       setDescription("");
-      setAddress("");
-      // setPostedBy("");
+      setLocation("");
+      setPayRate("");
+      setPostedBy(user.email);
       dispatch({ type: "CREATE_JOB", payload: json });
     }
   };
@@ -68,14 +69,20 @@ const JobForm = () => {
         className={emptyFields.includes("description") ? "error" : ""}
       />
 
-      <label>Address</label>
+      <label>Location</label>
       <input
         type="text"
-        onChange={(e) => setAddress(e.target.value)}
-        value={address}
-        className={emptyFields.includes("address") ? "error" : ""}
+        onChange={(e) => setLocation(e.target.value)}
+        value={location}
+        className={emptyFields.includes("location") ? "error" : ""}
       />
-
+      <label>Pay rate</label>
+      <input
+        type="text"
+        onChange={(e) => setPayRate(e.target.value)}
+        value={payRate}
+        className={emptyFields.includes("payRate") ? "error" : ""}
+      />
       <button>Add job</button>
       {error && <div className="error">{error}</div>}
     </form>

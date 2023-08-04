@@ -14,8 +14,12 @@ const jobSchema = new Schema(
     postedBy: {
       type: String,
     },
-    address: {
+    location: {
       type: String,
+    },
+    payRate: {
+      type: String,
+      required: true,
     },
   },
   { timestamps: true }

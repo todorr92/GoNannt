@@ -27,7 +27,7 @@ const getJob = async (req, res) => {
 
 // create a new job
 const createJob = async (req, res) => {
-  const { title, description, address } = req.body;
+  const { title, description, location, payRate, postedBy } = req.body;
 
   let emptyFields = [];
 
@@ -37,8 +37,11 @@ const createJob = async (req, res) => {
   if (!description) {
     emptyFields.push("description");
   }
-  if (!address) {
-    emptyFields.push("address");
+  if (!location) {
+    emptyFields.push("location");
+  }
+  if (!payRate) {
+    emptyFields.push("location");
   }
   if (emptyFields.length > 0) {
     return res
@@ -48,7 +51,13 @@ const createJob = async (req, res) => {
 
   // add to the database
   try {
-    const job = await Job.create({ title, description, address });
+    const job = await Job.create({
+      title,
+      description,
+      location,
+      payRate,
+      postedBy,
+    });
     res.status(200).json(job);
   } catch (error) {
     res.status(400).json({ error: error.message });
