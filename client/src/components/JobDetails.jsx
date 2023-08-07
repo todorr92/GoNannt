@@ -10,6 +10,7 @@ import {
   faPen,
   faPaperPlane,
   faArrowRight,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 // date fns
@@ -18,7 +19,6 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 const JobDetails = ({ job }) => {
   const { dispatch } = useJobsContext();
   const { user } = useAuthContext();
-  console.log(job.postedBy);
   if (!user) {
     return;
   }
@@ -98,7 +98,15 @@ const JobDetails = ({ job }) => {
               />
               {job.description}
             </p>
-            <p>{job.postedBy}</p>
+            <p>
+              <FontAwesomeIcon
+                icon={faUser}
+                size="sm"
+                style={{ color: "#aea0ff" }}
+                className="me-2"
+              />
+              {job.postedBy}
+            </p>
             <Link className="button float-end me-2 ms-2">
               <FontAwesomeIcon
                 icon={faArrowRight}

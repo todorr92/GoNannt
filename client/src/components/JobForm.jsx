@@ -18,6 +18,9 @@ const JobForm = () => {
     setEmptyFields([]);
     setError(null);
   };
+  const addPostedBy = () => {
+    setPostedBy(user.email);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!user) {
@@ -150,7 +153,13 @@ const JobForm = () => {
               >
                 Close
               </button>
-              <button className="action-button">Add job</button>
+              <button
+                className="action-button"
+                data-bs-dismiss="modal"
+                onClick={addPostedBy}
+              >
+                Add job
+              </button>
             </div>
           </div>
         </div>
