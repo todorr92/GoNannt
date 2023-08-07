@@ -49,15 +49,17 @@ const JobDetails = ({ job }) => {
             />
           </div>
           <div className="col-9">
-            <span>
-              <FontAwesomeIcon
-                icon={faTrashCan}
-                size="2xl"
-                style={{ color: "red" }}
-                onClick={handleDeleteClick}
-                className="float-end"
-              />
-            </span>
+            {user.userName == job.postedBy && (
+              <span>
+                <FontAwesomeIcon
+                  icon={faTrashCan}
+                  size="2xl"
+                  style={{ color: "red" }}
+                  onClick={handleDeleteClick}
+                  className="float-end"
+                />
+              </span>
+            )}
             <h4 className="fw-bold">{job.title}</h4>
             <p>
               <FontAwesomeIcon
@@ -116,24 +118,29 @@ const JobDetails = ({ job }) => {
               />
               View Job
             </Link>
-            <Link className="action-button float-end me-2">
-              <FontAwesomeIcon
-                icon={faPaperPlane}
-                size="sm"
-                style={{ color: "#ffffff" }}
-                className="me-2"
-              />
-              Apply
-            </Link>
-            <Link className="action-button float-end me-3">
-              <FontAwesomeIcon
-                icon={faPen}
-                size="sm"
-                style={{ color: "#fff" }}
-                className="me-2"
-              />
-              Edit
-            </Link>
+            {user.userName !== job.postedBy && user.userParent == false && (
+              <Link className="action-button float-end me-2">
+                <FontAwesomeIcon
+                  icon={faPaperPlane}
+                  size="sm"
+                  style={{ color: "#ffffff" }}
+                  className="me-2"
+                />
+                Apply
+              </Link>
+            )}
+
+            {user.userName == job.postedBy && (
+              <Link className="action-button float-end me-3">
+                <FontAwesomeIcon
+                  icon={faPen}
+                  size="sm"
+                  style={{ color: "#fff" }}
+                  className="me-2"
+                />
+                Edit
+              </Link>
+            )}
           </div>
         </div>
       </div>

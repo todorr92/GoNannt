@@ -19,7 +19,8 @@ const JobForm = () => {
     setError(null);
   };
   const addPostedBy = () => {
-    setPostedBy(user.email);
+    setPostedBy(user.userName);
+    console.log(user);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,15 +52,15 @@ const JobForm = () => {
       setDescription("");
       setLocation("");
       setPayRate("");
-      setPostedBy(user.email);
+      // setPostedBy(user.name);
       dispatch({ type: "CREATE_JOB", payload: json });
     }
-    console.log(emptyFields);
   };
 
-  return (
+  return user.userParent ? (
     <form className="create" onSubmit={handleSubmit}>
       {/* <!-- Button trigger modal --> */}
+
       <button
         type="button"
         className="button"
@@ -165,7 +166,7 @@ const JobForm = () => {
         </div>
       </div>
     </form>
-  );
+  ) : null;
 };
 
 export default JobForm;

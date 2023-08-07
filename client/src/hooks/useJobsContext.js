@@ -3,7 +3,6 @@ import { useContext } from "react";
 
 export const useJobsContext = () => {
   const context = useContext(JobsContext);
-  console.log(context);
 
   if (!context) {
     throw Error("useJobsContext must be used inside a JobsContextProvider");
