@@ -41,7 +41,7 @@ const createJob = async (req, res) => {
     emptyFields.push("location");
   }
   if (!payRate) {
-    emptyFields.push("location");
+    emptyFields.push("payRate");
   }
   if (emptyFields.length > 0) {
     return res

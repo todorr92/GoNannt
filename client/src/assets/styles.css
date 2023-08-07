@@ -195,12 +195,10 @@ footer {
 }
 
 input.error {
-  border: 1px solid var(--error);
+  border: 1px solid red;
 }
 
 /* JOBS-BOARD */
-.placeholder-img {
-}
 .placeholder-img img {
   border-radius: 50%;
   border: 3px solid #aea0ff;
