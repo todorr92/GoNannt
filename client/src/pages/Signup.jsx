@@ -83,7 +83,7 @@ const Signup = () => {
 
                 <div className="form-floating w-75 m-auto">
                   <input
-                    type="name"
+                    type="text"
                     className="form-control mb-3"
                     id="name"
                     onChange={(e) => setName(e.target.value)}
