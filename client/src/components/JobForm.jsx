@@ -106,10 +106,13 @@ const JobForm = () => {
               </div>
               <div className="mb-3">
                 <label className="form-label">Description:</label>
-                <input
+                <textarea
                   type="text"
                   onChange={(e) => setDescription(e.target.value)}
                   value={description}
+                  id="textarea"
+                  rows="5"
+                  cols="100"
                   className={
                     emptyFields.includes("description")
                       ? "form-control error"
