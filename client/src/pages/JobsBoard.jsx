@@ -39,14 +39,15 @@ const JobsBoard = () => {
                 The most recent childminding jobs, nanny positions, au pair
                 roles and babysitting jobs across Ireland on GoNanny.
               </p>
+              <JobForm />
             </div>
           </div>
         </div>
       </div>
+
       <div className="container-fluid bg-light pt-5">
         {jobs && jobs.map((job) => <JobDetails job={job} key={job._id} />)}
       </div>
-      <JobForm />
     </>
   );
 };
