@@ -22,6 +22,25 @@ const JobDetails = ({ job }) => {
   if (!user) {
     return;
   }
+  // Apply modal
+  const exampleModal = document.getElementById("exampleModal");
+  if (exampleModal) {
+    exampleModal.addEventListener("show.bs.modal", (event) => {
+      // Button that triggered the modal
+      const button = event.relatedTarget;
+      // Extract info from data-bs-* attributes
+      const recipient = button.getAttribute("data-bs-whatever");
+      // If necessary, you could initiate an Ajax request here
+      // and then do the updating in a callback.
+
+      // Update the modal's content.
+      const modalTitle = exampleModal.querySelector(".modal-title");
+      const modalBodyInput = exampleModal.querySelector(".modal-body input");
+
+      modalTitle.textContent = `New message to ${recipient}`;
+      modalBodyInput.value = recipient;
+    });
+  }
 
   const handleDeleteClick = async () => {
     const response = await fetch("/api/jobs-board/" + job._id, {
@@ -119,7 +138,12 @@ const JobDetails = ({ job }) => {
               View Job
             </Link>
             {user.userName !== job.postedBy && user.userParent == false && (
-              <Link className="action-button float-end me-2">
+              <Link
+                className="action-button float-end me-2"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                data-bs-whatever={job.postedBy}
+              >
                 <FontAwesomeIcon
                   icon={faPaperPlane}
                   size="sm"
@@ -129,6 +153,74 @@ const JobDetails = ({ job }) => {
                 Apply
               </Link>
             )}
+
+            <div
+              className="modal fade"
+              id="exampleModal"
+              tabIndex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header fw-bold">
+                    <h1
+                      className="modal-title fs-5 fw-bold"
+                      id="exampleModalLabel"
+                    >
+                      New message
+                    </h1>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    <form>
+                      <div className="mb-3">
+                        <label
+                          htmlFor="recipient-name"
+                          className="col-form-label"
+                        >
+                          Recipient:
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="recipient-name"
+                        />
+                      </div>
+                      <div className="mb-3">
+                        <label
+                          htmlFor="message-text"
+                          className="col-form-label"
+                        >
+                          Message:
+                        </label>
+                        <textarea
+                          className="form-control"
+                          id="message-text"
+                        ></textarea>
+                      </div>
+                    </form>
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="button"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" className="action-button">
+                      Send message
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {user.userName == job.postedBy && (
               <Link className="action-button float-end me-3">
