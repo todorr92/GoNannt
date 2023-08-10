@@ -78,7 +78,7 @@ const FAQParents = () => {
             find suitable childcare. The business is backed by a great team of
             advisors, parents, and childminders whose ultimate goal is to create
             the best experience possible for parents and carers. Here is some
-            information About Us.
+            information.
           </p>
           <h3 className="fw-bold mb-3">Where does SureSitter operate?</h3>
           <p className="mb-5">We operate nationwide throughout Ireland.</p>

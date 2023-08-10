@@ -53,7 +53,6 @@ function App() {
           path="/signup"
           element={!user ? <Signup /> : <Navigate to="/" />}
         ></Route>
-        <Route path="/about" element={<About />}></Route>
       </Routes>
       <HideFooter>
         <Footer />

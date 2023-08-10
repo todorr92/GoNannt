@@ -51,8 +51,7 @@ const FAQSitters = () => {
             GoNanny was founded by number of workings parents who struggled to
             find suitable childcare. The business is backed by a great team of
             advisors, parents, and childminders whose ultimate goal is to create
-            the best experience possible for parents and carers. Here is some
-            information About Us.
+            the best experience possible for parents and carers.
           </p>
         </div>
       </div>
