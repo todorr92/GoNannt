@@ -194,7 +194,8 @@ footer {
   border-radius: 30px;
 }
 
-input.error {
+input.error,
+textarea.error {
   border: 1px solid red;
 }
 
