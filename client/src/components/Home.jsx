@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+// FONTAWESOME ICONS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
 const Home = () => {
+  // TOGGLE FOR PARENT AND SITTER BUTTONS
   const [isActiveParents, setActiveParents] = useState(true);
   const [isActiveSitters, setActiveSitters] = useState(false);
   const toggleClassParents = () => {

@@ -22,6 +22,7 @@ const JobForm = () => {
     setPostedBy(user.userName);
     console.log(user);
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!user) {
@@ -52,7 +53,6 @@ const JobForm = () => {
       setDescription("");
       setLocation("");
       setPayRate("");
-      // setPostedBy(user.name);
       dispatch({ type: "CREATE_JOB", payload: json });
     }
   };
@@ -65,7 +65,7 @@ const JobForm = () => {
         type="button"
         className="button"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        data-bs-target="#addModal"
       >
         Add new job
       </button>
@@ -73,9 +73,9 @@ const JobForm = () => {
       {/* <!-- Modal --> */}
       <div
         className="modal fade"
-        id="exampleModal"
+        id="addModal"
         tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby="addModalLabel"
         aria-hidden="true"
       >
         <div className="modal-dialog">
@@ -157,11 +157,7 @@ const JobForm = () => {
               >
                 Close
               </button>
-              <button
-                className="action-button"
-                data-bs-dismiss="modal"
-                onClick={addPostedBy}
-              >
+              <button className="action-button" onClick={addPostedBy}>
                 Add job
               </button>
             </div>

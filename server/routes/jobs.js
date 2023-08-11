@@ -13,7 +13,7 @@ const router = express.Router();
 // require auth for all job routes
 router.use(requireAuth);
 
-// GET all job
+// GET all jobs
 router.get("/", getJobs);
 
 // GET a single job

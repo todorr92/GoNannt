@@ -1,6 +1,8 @@
 import { useJobsContext } from "../hooks/useJobsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
+// FONTAWESOME ICONS
 import {
   faTrashCan,
   faEuroSign,
@@ -12,6 +14,7 @@ import {
   faArrowRight,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 // date fns
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
@@ -19,11 +22,57 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 const JobDetails = ({ job }) => {
   const { dispatch } = useJobsContext();
   const { user } = useAuthContext();
+
+  const [updatedError, setUpdatedError] = useState(null);
+  const [updatedEmptyFields, setUpdatedEmptyFields] = useState([]);
+  const [updatedJob, setUpdatedJob] = useState({
+    title: "",
+    description: "",
+    location: "",
+    payRate: "",
+  });
+  // UPDATE JOB
+  const updateJob = (id, title, description, location, payRate) => {
+    setUpdatedJob((prev) => {
+      return {
+        ...prev,
+        id: id,
+        title: title,
+        description: description,
+        location: location,
+        payRate: payRate,
+      };
+    });
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUpdatedJob((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+    console.log(name, value);
+  };
+
+  const saveUpdatedJob = () => {
+    console.log(updatedJob);
+    axios
+      .put(`/jobs-board/${updatedJob.id}`, updatedJob)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+
+    window.location.reload();
+  };
+  const clearEmptyFields = () => {
+    setUpdatedEmptyFields([]);
+    setUpdatedError(null);
+  };
   if (!user) {
     return;
   }
   // Apply modal
-  const exampleModal = document.getElementById("exampleModal");
+  const exampleModal = document.getElementById("apply");
   if (exampleModal) {
     exampleModal.addEventListener("show.bs.modal", (event) => {
       // Button that triggered the modal
@@ -41,7 +90,7 @@ const JobDetails = ({ job }) => {
       modalBodyInput.value = recipient;
     });
   }
-
+  // DELETE JOB
   const handleDeleteClick = async () => {
     const response = await fetch("/api/jobs-board/" + job._id, {
       method: "DELETE",
@@ -72,7 +121,7 @@ const JobDetails = ({ job }) => {
               <span>
                 <FontAwesomeIcon
                   icon={faTrashCan}
-                  size="2xl"
+                  size="xl"
                   style={{ color: "red" }}
                   onClick={handleDeleteClick}
                   className="float-end"
@@ -80,6 +129,15 @@ const JobDetails = ({ job }) => {
               </span>
             )}
             <h4 className="fw-bold">{job.title}</h4>
+            <p>
+              <FontAwesomeIcon
+                icon={faComment}
+                size="sm"
+                style={{ color: "#aea0ff" }}
+                className="me-2"
+              />
+              {job.description}
+            </p>
             <p>
               <FontAwesomeIcon
                 icon={faLocationDot}
@@ -99,6 +157,16 @@ const JobDetails = ({ job }) => {
               />
               {job.payRate}
             </p>
+
+            <p>
+              <FontAwesomeIcon
+                icon={faUser}
+                size="sm"
+                style={{ color: "#aea0ff" }}
+                className="me-2"
+              />
+              {job.postedBy}
+            </p>
             <p>
               <FontAwesomeIcon
                 icon={faClock}
@@ -110,24 +178,6 @@ const JobDetails = ({ job }) => {
                 addSuffix: true,
               })}
             </p>
-            <p>
-              <FontAwesomeIcon
-                icon={faComment}
-                size="sm"
-                style={{ color: "#aea0ff" }}
-                className="me-2"
-              />
-              {job.description}
-            </p>
-            <p>
-              <FontAwesomeIcon
-                icon={faUser}
-                size="sm"
-                style={{ color: "#aea0ff" }}
-                className="me-2"
-              />
-              {job.postedBy}
-            </p>
             <Link className="button float-end me-2 ms-2">
               <FontAwesomeIcon
                 icon={faArrowRight}
@@ -138,11 +188,12 @@ const JobDetails = ({ job }) => {
               View Job
             </Link>
             {user.userName !== job.postedBy && user.userParent == false && (
-              <Link
+              <button
                 className="action-button float-end me-2"
                 data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
+                data-bs-target="#apply"
                 data-bs-whatever={job.postedBy}
+                type="button"
               >
                 <FontAwesomeIcon
                   icon={faPaperPlane}
@@ -151,14 +202,14 @@ const JobDetails = ({ job }) => {
                   className="me-2"
                 />
                 Apply
-              </Link>
+              </button>
             )}
-
+            {/* APPLY MODAL */}
             <div
               className="modal fade"
-              id="exampleModal"
+              id="apply"
               tabIndex="-1"
-              aria-labelledby="exampleModalLabel"
+              aria-labelledby="applyLabel"
               aria-hidden="true"
             >
               <div className="modal-dialog">
@@ -214,21 +265,38 @@ const JobDetails = ({ job }) => {
                     >
                       Close
                     </button>
-                    <button type="button" className="action-button">
+                    <button
+                      type="button"
+                      className="action-button"
+                      data-bs-dismiss="modal"
+                    >
                       Send message
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-
+            {/* SHOW EDIT BUTTON ONLY WHEN USERNAME == POSTEDBY */}
             {user.userName == job.postedBy && (
-              <Link className="action-button float-end me-3">
+              <Link
+                className="action-button float-end me-3"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+              >
                 <FontAwesomeIcon
                   icon={faPen}
                   size="sm"
                   style={{ color: "#fff" }}
                   className="me-2"
+                  onClick={() =>
+                    updateJob(
+                      job._id,
+                      job.title,
+                      job.description,
+                      job.location,
+                      job.payRate
+                    )
+                  }
                 />
                 Edit
               </Link>
@@ -236,6 +304,102 @@ const JobDetails = ({ job }) => {
           </div>
         </div>
       </div>
+      <form className="update">
+        {/* <!-- Modal --> */}
+        <div
+          className="modal fade"
+          id="updateModal"
+          tabIndex="-1"
+          aria-labelledby="updateModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h3 className="fw-bold">Edit job</h3>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  onClick={clearEmptyFields}
+                ></button>
+              </div>
+              <div className="modal-body">
+                <div className="mb-3">
+                  <label className="form-label">Job Title:</label>
+                  <input
+                    type="text"
+                    onChange={handleChange}
+                    value={updatedJob.title}
+                    className={
+                      updatedEmptyFields.includes("title")
+                        ? "form-control error"
+                        : "form-control"
+                    }
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Description:</label>
+                  <textarea
+                    type="text"
+                    onChange={handleChange}
+                    value={updatedJob.description}
+                    id="textarea"
+                    rows="5"
+                    cols="100"
+                    className={
+                      updatedEmptyFields.includes("description")
+                        ? "form-control error"
+                        : "form-control"
+                    }
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Location:</label>
+                  <input
+                    type="text"
+                    onChange={handleChange}
+                    value={updatedJob.location}
+                    className={
+                      updatedEmptyFields.includes("location")
+                        ? "form-control error"
+                        : "form-control"
+                    }
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Pay rate:</label>
+                  <input
+                    type="text"
+                    onChange={handleChange}
+                    value={updatedJob.payRate}
+                    className={
+                      updatedEmptyFields.includes("payRate")
+                        ? "form-control error"
+                        : "form-control"
+                    }
+                  />
+                </div>
+              </div>
+              {updatedError && <div className="error">{updatedError}</div>}
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="button"
+                  data-bs-dismiss="modal"
+                  onClick={clearEmptyFields}
+                >
+                  Close
+                </button>
+                <button className="action-button" onClick={saveUpdatedJob}>
+                  Edit job
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
     </>
   );
 };

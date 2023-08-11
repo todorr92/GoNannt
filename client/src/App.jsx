@@ -16,8 +16,6 @@ import FAQSitters from "./pages/FAQSitters";
 import JobsBoard from "./pages/JobsBoard";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import About from "./pages/About";
-
 // REACT IMPORTS
 import { Route, Routes, Navigate } from "react-router-dom";
 
