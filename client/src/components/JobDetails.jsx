@@ -71,6 +71,7 @@ const JobDetails = ({ job }) => {
   if (!user) {
     return;
   }
+
   // Apply modal
   const exampleModal = document.getElementById("apply");
   if (exampleModal) {
@@ -90,6 +91,17 @@ const JobDetails = ({ job }) => {
       modalBodyInput.value = recipient;
     });
   }
+  const toastTrigger = document.getElementById("liveToastBtn");
+  const toastLiveExample = document.getElementById("liveToast");
+
+  if (toastTrigger) {
+    const toastBootstrap =
+      bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+    toastTrigger.addEventListener("click", () => {
+      toastBootstrap.show();
+    });
+  }
+
   // DELETE JOB
   const handleDeleteClick = async () => {
     const response = await fetch("/api/jobs-board/" + job._id, {
@@ -178,7 +190,7 @@ const JobDetails = ({ job }) => {
                 addSuffix: true,
               })}
             </p>
-            <Link className="button float-end me-2 ms-2">
+            {/* <Link className="button float-end me-2 ms-2">
               <FontAwesomeIcon
                 icon={faArrowRight}
                 size="sm"
@@ -186,7 +198,7 @@ const JobDetails = ({ job }) => {
                 className="me-2"
               />
               View Job
-            </Link>
+            </Link> */}
             {user.userName !== job.postedBy && user.userParent == false && (
               <button
                 className="action-button float-end me-2"
@@ -204,6 +216,29 @@ const JobDetails = ({ job }) => {
                 Apply
               </button>
             )}
+            <div className="toast-container position-fixed bottom-0 end-0 p-3">
+              <div
+                id="liveToast"
+                className="toast"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+              >
+                <div className="toast-header">
+                  <strong className="me-auto">Hello {user.userName}</strong>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="toast"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div className="toast-body">
+                  Thank you for applying on {job.title} job. {job.postedBy} will
+                  be in touch with your shortly! :)
+                </div>
+              </div>
+            </div>
             {/* APPLY MODAL */}
             <div
               className="modal fade"
@@ -269,6 +304,7 @@ const JobDetails = ({ job }) => {
                       type="button"
                       className="action-button"
                       data-bs-dismiss="modal"
+                      id="liveToastBtn"
                     >
                       Send message
                     </button>
